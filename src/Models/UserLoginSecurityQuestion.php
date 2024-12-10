@@ -2,8 +2,8 @@
 
 namespace Joinbiz\Data\Models\Security;
 
-use Joinbiz\Data\Models\Common\Enumeration;
 use Illuminate\Database\Eloquent\Model;
+use Joinbiz\Data\Models\Common\Enumeration;
 
 /**
  * @property string $question_enum_id
@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserLoginSecurityQuestion extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

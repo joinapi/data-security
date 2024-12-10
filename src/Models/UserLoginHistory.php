@@ -2,8 +2,8 @@
 
 namespace Joinbiz\Data\Models\Security;
 
-use Joinbiz\Data\Models\Party\Party;
 use Illuminate\Database\Eloquent\Model;
+use Joinbiz\Data\Models\Party\Party;
 
 /**
  * @property string $user_login_id
@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserLoginHistory extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

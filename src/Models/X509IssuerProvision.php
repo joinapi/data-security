@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Model;
 class X509IssuerProvision extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

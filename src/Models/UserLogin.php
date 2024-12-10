@@ -2,6 +2,7 @@
 
 namespace Joinbiz\Data\Models\Security;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Accounting\BudgetStatus;
 use Joinbiz\Data\Models\Accounting\FinAccountStatus;
 use Joinbiz\Data\Models\Accounting\InvoiceStatus;
@@ -46,8 +47,6 @@ use Joinbiz\Data\Models\Workeffort\Timesheet;
 use Joinbiz\Data\Models\Workeffort\WorkEffortPartyAssignment;
 use Joinbiz\Data\Models\Workeffort\WorkEffortReview;
 use Joinbiz\Data\Models\Workeffort\WorkEffortStatus;
-use Illuminate\Database\Eloquent\Model;
-
 
 /**
  * @property string $user_login_id
@@ -138,6 +137,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserLogin extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
@@ -218,7 +218,7 @@ class UserLogin extends Model
      */
     public function salesForecastsByModifiedByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\SalesForecast', 'modified_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\SalesForecast', 'modified_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -226,7 +226,7 @@ class UserLogin extends Model
      */
     public function shipmentReceiptsByReceivedByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Shipment\ShipmentReceipt', 'received_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Shipment\ShipmentReceipt', 'received_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -234,7 +234,7 @@ class UserLogin extends Model
      */
     public function returnStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\ReturnStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\ReturnStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -242,7 +242,7 @@ class UserLogin extends Model
      */
     public function jobSandboxesByAuthUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Service\JobSandbox', 'auth_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Service\JobSandbox', 'auth_user_login_id', 'user_login_id');
     }
 
     /**
@@ -250,7 +250,7 @@ class UserLogin extends Model
      */
     public function jobSandboxesByRunAsUser()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Service\JobSandbox', 'run_as_user', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Service\JobSandbox', 'run_as_user', 'user_login_id');
     }
 
     /**
@@ -258,7 +258,7 @@ class UserLogin extends Model
      */
     public function contentsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\Content', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\Content', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -266,7 +266,7 @@ class UserLogin extends Model
      */
     public function contentsByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\Content', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\Content', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -274,7 +274,7 @@ class UserLogin extends Model
      */
     public function orderItemChangesByChangeUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderItemChange', 'change_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderItemChange', 'change_user_login', 'user_login_id');
     }
 
     /**
@@ -282,7 +282,7 @@ class UserLogin extends Model
      */
     public function returnAdjustmentsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\ReturnAdjustment', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\ReturnAdjustment', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -290,7 +290,7 @@ class UserLogin extends Model
      */
     public function contactListCommStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\ContactListCommStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\ContactListCommStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -298,7 +298,7 @@ class UserLogin extends Model
      */
     public function finAccountStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Accounting\FinAccountStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Accounting\FinAccountStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -306,7 +306,7 @@ class UserLogin extends Model
      */
     public function dataResourcesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\DataResource', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\DataResource', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -314,7 +314,7 @@ class UserLogin extends Model
      */
     public function dataResourcesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\DataResource', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\DataResource', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -322,7 +322,7 @@ class UserLogin extends Model
      */
     public function requirementStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\RequirementStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\RequirementStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -330,7 +330,7 @@ class UserLogin extends Model
      */
     public function orderAdjustmentsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderAdjustment', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderAdjustment', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -338,7 +338,7 @@ class UserLogin extends Model
      */
     public function productPromosByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPromo', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPromo', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -346,7 +346,7 @@ class UserLogin extends Model
      */
     public function productPromosByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPromo', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPromo', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -354,7 +354,7 @@ class UserLogin extends Model
      */
     public function productPromoCodesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPromoCode', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPromoCode', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -362,7 +362,7 @@ class UserLogin extends Model
      */
     public function productPromoCodesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPromoCode', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPromoCode', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -370,7 +370,7 @@ class UserLogin extends Model
      */
     public function quoteAdjustmentsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\QuoteAdjustment', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\QuoteAdjustment', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -378,7 +378,7 @@ class UserLogin extends Model
      */
     public function custRequestStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\CustRequestStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\CustRequestStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -386,7 +386,7 @@ class UserLogin extends Model
      */
     public function productReviews()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductReview', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductReview', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -394,7 +394,7 @@ class UserLogin extends Model
      */
     public function orderHeadersByCreatedBy()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderHeader', 'created_by', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderHeader', 'created_by', 'user_login_id');
     }
 
     /**
@@ -402,7 +402,7 @@ class UserLogin extends Model
      */
     public function productPriceChangesByChangedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPriceChange', 'changed_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPriceChange', 'changed_by_user_login', 'user_login_id');
     }
 
     /**
@@ -410,7 +410,7 @@ class UserLogin extends Model
      */
     public function contactListsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\ContactList', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\ContactList', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -418,7 +418,7 @@ class UserLogin extends Model
      */
     public function contactListsByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\ContactList', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\ContactList', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -426,7 +426,7 @@ class UserLogin extends Model
      */
     public function productPricesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPrice', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPrice', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -434,7 +434,7 @@ class UserLogin extends Model
      */
     public function productPricesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductPrice', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductPrice', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -442,7 +442,7 @@ class UserLogin extends Model
      */
     public function productFeaturePricesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductFeaturePrice', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductFeaturePrice', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -450,7 +450,7 @@ class UserLogin extends Model
      */
     public function productFeaturePricesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\ProductFeaturePrice', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\ProductFeaturePrice', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -458,7 +458,7 @@ class UserLogin extends Model
      */
     public function partiesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Party\Party', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Party\Party', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -466,7 +466,7 @@ class UserLogin extends Model
      */
     public function partiesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Party\Party', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Party\Party', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -474,7 +474,7 @@ class UserLogin extends Model
      */
     public function budgetStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Accounting\BudgetStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Accounting\BudgetStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -482,7 +482,7 @@ class UserLogin extends Model
      */
     public function productsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\Product', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\Product', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -490,7 +490,7 @@ class UserLogin extends Model
      */
     public function productsByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\Product', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\Product', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -498,7 +498,7 @@ class UserLogin extends Model
      */
     public function itemIssuancesByIssuedByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Shipment\ItemIssuance', 'issued_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Shipment\ItemIssuance', 'issued_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -506,7 +506,7 @@ class UserLogin extends Model
      */
     public function salesOpportunitiesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\SalesOpportunity', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\SalesOpportunity', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -514,7 +514,7 @@ class UserLogin extends Model
      */
     public function contentAssocsByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\ContentAssoc', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\ContentAssoc', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -522,7 +522,7 @@ class UserLogin extends Model
      */
     public function contentAssocsByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\ContentAssoc', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\ContentAssoc', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -530,7 +530,7 @@ class UserLogin extends Model
      */
     public function picklistStatusHistoriesByChangeUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Shipment\PicklistStatusHistory', 'change_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Shipment\PicklistStatusHistory', 'change_user_login_id', 'user_login_id');
     }
 
     /**
@@ -538,7 +538,7 @@ class UserLogin extends Model
      */
     public function orderItemsByDontCancelSetUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderItem', 'dont_cancel_set_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderItem', 'dont_cancel_set_user_login', 'user_login_id');
     }
 
     /**
@@ -546,7 +546,7 @@ class UserLogin extends Model
      */
     public function orderItemsByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderItem', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderItem', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -554,7 +554,7 @@ class UserLogin extends Model
      */
     public function picklistRolesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Shipment\PicklistRole', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Shipment\PicklistRole', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -562,7 +562,7 @@ class UserLogin extends Model
      */
     public function picklistRolesByLastModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Shipment\PicklistRole', 'last_modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Shipment\PicklistRole', 'last_modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -570,7 +570,7 @@ class UserLogin extends Model
      */
     public function inventoryItemStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Product\InventoryItemStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Product\InventoryItemStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -578,7 +578,7 @@ class UserLogin extends Model
      */
     public function orderPaymentPreferencesByCreatedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Order\OrderPaymentPreference', 'created_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Order\OrderPaymentPreference', 'created_by_user_login', 'user_login_id');
     }
 
     /**
@@ -586,7 +586,7 @@ class UserLogin extends Model
      */
     public function workEffortPartyAssignmentsByAssignedByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\WorkEffort\WorkEffortPartyAssignment', 'assigned_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\WorkEffort\WorkEffortPartyAssignment', 'assigned_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -594,7 +594,7 @@ class UserLogin extends Model
      */
     public function partyStatusesByChangeByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Party\PartyStatus', 'change_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Party\PartyStatus', 'change_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -602,7 +602,7 @@ class UserLogin extends Model
      */
     public function salesOpportunityHistoriesByModifiedByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Marketing\SalesOpportunityHistory', 'modified_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Marketing\SalesOpportunityHistory', 'modified_by_user_login', 'user_login_id');
     }
 
     /**
@@ -610,7 +610,7 @@ class UserLogin extends Model
      */
     public function party()
     {
-        return $this->belongsTo(  'Joinbiz\Data\Models\Party\Party', 'party_id', 'party_id');
+        return $this->belongsTo('Joinbiz\Data\Models\Party\Party', 'party_id', 'party_id');
     }
 
     /**
@@ -618,7 +618,7 @@ class UserLogin extends Model
      */
     public function userLoginSession()
     {
-        return $this->hasOne(  'Joinbiz\Data\Models\Security\UserLoginSession', 'user_login_id', 'user_login_id');
+        return $this->hasOne('Joinbiz\Data\Models\Security\UserLoginSession', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -626,16 +626,15 @@ class UserLogin extends Model
      */
     public function userLoginSecurityGroups()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Security\UserLoginSecurityGroup', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Security\UserLoginSecurityGroup', 'user_login_id', 'user_login_id');
     }
-
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function webUserPreferences()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Content\WebUserPreference', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Content\WebUserPreference', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -643,7 +642,7 @@ class UserLogin extends Model
      */
     public function workEffortStatusesBySetByUserLogin()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Workeffort\WorkEffortStatus', 'set_by_user_login', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Workeffort\WorkEffortStatus', 'set_by_user_login', 'user_login_id');
     }
 
     /**
@@ -651,7 +650,7 @@ class UserLogin extends Model
      */
     public function userLoginSecurityQuestions()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Security\UserLoginSecurityQuestion', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Security\UserLoginSecurityQuestion', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -659,7 +658,7 @@ class UserLogin extends Model
      */
     public function workEffortReviews()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Workeffort\WorkEffortReview', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Workeffort\WorkEffortReview', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -667,7 +666,7 @@ class UserLogin extends Model
      */
     public function timesheetsByApprovedByUserLoginId()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Workeffort\Timesheet', 'approved_by_user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Workeffort\Timesheet', 'approved_by_user_login_id', 'user_login_id');
     }
 
     /**
@@ -675,7 +674,7 @@ class UserLogin extends Model
      */
     public function userLoginPasswordHistories()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Security\UserLoginPasswordHistory', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Security\UserLoginPasswordHistory', 'user_login_id', 'user_login_id');
     }
 
     /**
@@ -683,6 +682,6 @@ class UserLogin extends Model
      */
     public function userLoginHistories()
     {
-        return $this->hasMany(  'Joinbiz\Data\Models\Security\UserLoginHistory', 'user_login_id', 'user_login_id');
+        return $this->hasMany('Joinbiz\Data\Models\Security\UserLoginHistory', 'user_login_id', 'user_login_id');
     }
 }

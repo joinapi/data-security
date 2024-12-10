@@ -2,9 +2,9 @@
 
 namespace Joinbiz\Data\Models\Security;
 
+use Illuminate\Database\Eloquent\Model;
 use Joinbiz\Data\Models\Common\PortalPage;
 use Joinbiz\Data\Models\Party\PartyRelationship;
-use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string $group_id
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
 class SecurityGroup extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**

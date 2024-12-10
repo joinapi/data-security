@@ -2,9 +2,9 @@
 
 namespace Joinbiz\Data\Models\Security;
 
+use Joinbiz\Data\Models\Security\Commands\DataSecurityCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Joinbiz\Data\Models\Security\Commands\DataSecurityCommand;
 
 class DataSecurityServiceProvider extends PackageServiceProvider
 {
