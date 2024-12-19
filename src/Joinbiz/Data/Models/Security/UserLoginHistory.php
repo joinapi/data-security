@@ -23,11 +23,12 @@ use Illuminate\Database\Eloquent\Model;
 class UserLoginHistory extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     * 
+     *
      * @var string
      */
     protected $table = 'user_login_history';

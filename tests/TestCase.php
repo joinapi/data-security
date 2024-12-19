@@ -2,10 +2,8 @@
 
 namespace Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Joinbiz\Data\DataSecurityServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-
 
 class TestCase extends Orchestra
 {

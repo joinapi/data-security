@@ -1,7 +1,7 @@
 <?php
 
 namespace Joinbiz\Data\Models\Security;
-use Joinbiz\Data\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -94,6 +94,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserLogin extends Model
 {
     const CREATED_AT = 'created_stamp';
+
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
