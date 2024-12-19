@@ -20,7 +20,7 @@ class TarpittedLoginView extends Model
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'tarpitted_login_view';

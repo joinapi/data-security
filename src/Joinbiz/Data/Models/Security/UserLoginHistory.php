@@ -2,7 +2,6 @@
 
 namespace Joinbiz\Data\Models\Security;
 
-use Joinbiz\Data\Models\Party\Party;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -28,7 +27,7 @@ class UserLoginHistory extends Model
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'user_login_history';
@@ -43,7 +42,7 @@ class UserLoginHistory extends Model
      */
     public function party()
     {
-        return $this->belongsTo('Joinbiz\Data\Models\Security\Party', 'party_id', 'party_id');
+        return $this->belongsTo('Joinbiz\Data\Models\Party\Party', 'party_id', 'party_id');
     }
 
     /**

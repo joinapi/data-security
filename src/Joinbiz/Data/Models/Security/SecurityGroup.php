@@ -2,8 +2,6 @@
 
 namespace Joinbiz\Data\Models\Security;
 
-use Joinbiz\Data\Models\Common\PortalPage;
-use Joinbiz\Data\Models\Party\PartyRelationship;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -14,10 +12,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $last_updated_tx_stamp
  * @property string $created_stamp
  * @property string $created_tx_stamp
- * @property PartyRelationship[] $partyRelationshipsBySecurityGroupId
  * @property ProtectedView[] $protectedViews
- * @property PortalPage[] $portalPagesBySecurityGroupId
  * @property SecurityGroupPermission[] $securityGroupPermissions
+ * @property PartyRelationship[] $partyRelationshipsBySecurityGroupId
+ * @property PortalPage[] $portalPagesBySecurityGroupId
  * @property UserLoginSecurityGroup[] $userLoginSecurityGroups
  */
 class SecurityGroup extends Model
@@ -27,28 +25,28 @@ class SecurityGroup extends Model
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'security_group';
 
     /**
      * The primary key for the model.
-     *
+     * 
      * @var string
      */
     protected $primaryKey = 'group_id';
 
     /**
      * The "type" of the auto-incrementing ID.
-     *
+     * 
      * @var string
      */
     protected $keyType = 'string';
 
     /**
      * Indicates if the IDs are auto-incrementing.
-     *
+     * 
      * @var bool
      */
     public $incrementing = false;
@@ -61,14 +59,6 @@ class SecurityGroup extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function partyRelationshipsBySecurityGroupId()
-    {
-        return $this->hasMany('Joinbiz\Data\Models\Party\PartyRelationship', 'security_group_id', 'group_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function protectedViews()
     {
         return $this->hasMany('Joinbiz\Data\Models\Security\ProtectedView', 'group_id', 'group_id');
@@ -77,17 +67,25 @@ class SecurityGroup extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function portalPagesBySecurityGroupId()
+    public function securityGroupPermissions()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPage', 'security_group_id', 'group_id');
+        return $this->hasMany('Joinbiz\Data\Models\Security\SecurityGroupPermission', 'group_id', 'group_id');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function securityGroupPermissions()
+    public function partyRelationshipsBySecurityGroupId()
     {
-        return $this->hasMany('Joinbiz\Data\Models\Security\SecurityGroupPermission', 'group_id', 'group_id');
+        return $this->hasMany('Joinbiz\Data\Models\Party\PartyRelationship', 'security_group_id', 'group_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function portalPagesBySecurityGroupId()
+    {
+        return $this->hasMany('Joinbiz\Data\Models\Common\PortalPage', 'security_group_id', 'group_id');
     }
 
     /**

@@ -23,7 +23,7 @@ class ProtectedView extends Model
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'protected_view';
@@ -38,6 +38,6 @@ class ProtectedView extends Model
      */
     public function securityGroup()
     {
-        return $this->belongsTo('App\Joinbiz\Data\Models\Security\SecurityGroup', 'group_id', 'group_id');
+        return $this->belongsTo('Joinbiz\Data\Models\Security\SecurityGroup', 'group_id', 'group_id');
     }
 }

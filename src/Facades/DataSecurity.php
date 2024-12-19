@@ -1,6 +1,7 @@
 <?php
 
-namespace Joinbiz\Data\Models\Security\Facades;
+namespace Facades;
+namespace Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +12,6 @@ class DataSecurity extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return \Joinbiz\Data\Models\Security\DataSecurity::class;
+        return \Joinbiz\Data\DataSecurity::class;
     }
 }

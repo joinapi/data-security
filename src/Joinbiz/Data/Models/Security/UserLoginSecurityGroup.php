@@ -5,8 +5,8 @@ namespace Joinbiz\Data\Models\Security;
 use Illuminate\Database\Eloquent\Model;
 
 /**
+ * @property string $user_login_id
  * @property string $group_id
- * @property string $permission_id
  * @property string $from_date
  * @property string $thru_date
  * @property string $last_updated_stamp
@@ -14,18 +14,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $created_stamp
  * @property string $created_tx_stamp
  * @property SecurityGroup $securityGroup
+ * @property UserLogin $userLogin
  */
-class SecurityGroupPermission extends Model
+class UserLoginSecurityGroup extends Model
 {
     const CREATED_AT = 'created_stamp';
     const UPDATED_AT = 'last_updated_stamp';
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
-    protected $table = 'security_group_permission';
+    protected $table = 'user_login_security_group';
 
     /**
      * @var array
@@ -38,5 +39,13 @@ class SecurityGroupPermission extends Model
     public function securityGroup()
     {
         return $this->belongsTo('Joinbiz\Data\Models\Security\SecurityGroup', 'group_id', 'group_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function userLogin()
+    {
+        return $this->belongsTo('Joinbiz\Data\Models\Security\UserLogin', 'user_login_id', 'user_login_id');
     }
 }

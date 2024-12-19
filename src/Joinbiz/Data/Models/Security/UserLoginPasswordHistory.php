@@ -22,7 +22,7 @@ class UserLoginPasswordHistory extends Model
 
     /**
      * The table associated with the model.
-     *
+     * 
      * @var string
      */
     protected $table = 'user_login_password_history';

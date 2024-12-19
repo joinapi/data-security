@@ -1,6 +1,6 @@
 <?php
 
-namespace Joinbiz\Data\Models\Security;
+namespace Joinbiz\Data;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
